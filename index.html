@@ -6,7 +6,7 @@
   <title>SMVH Website</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body, html { height: 100%; font-family: 'Brush Script MT', cursive, sans-serif; }
+    body, html { height: 100%; font-family: Courier New; }
 
     nav {
       position: fixed; top: 0; left: 0; width: 100%;
@@ -23,6 +23,7 @@
     }
     nav ul li a:hover { background: rgba(255,255,255,0.2); border-radius: 5px; }
 
+    /* Hero section */
     .hero {
       position: relative; height: 100vh; display: flex;
       flex-direction: column; justify-content: center; align-items: center;
@@ -30,7 +31,13 @@
     }
     #bg-video {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      object-fit: cover; z-index: -1;
+      object-fit: cover; z-index: -2;
+    }
+    /* Calendar background layer */
+    #calendar-bg {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      z-index: -1; opacity: 0.2; filter: blur(2px);
+      pointer-events: none; /* lets clicks go through */
     }
     .hero::before {
       content: ""; position: absolute; top: 0; left: 0;
@@ -66,9 +73,19 @@
 
   <!-- Hero Section -->
   <section class="hero">
+    <!-- Video background -->
     <video autoplay muted loop id="bg-video">
       <source src="https://github.com/smvhingpityourvirtualassistant/my_website/raw/refs/heads/main/Untitled%20design%20(1).mp4" type="video/mp4">
     </video>
+
+    <!-- Calendar background -->
+    <iframe 
+      id="calendar-bg"
+      src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=Asia/Manila"
+      frameborder="0" scrolling="no">
+    </iframe>
+
+    <!-- Foreground content -->
     <div class="hero-content">
       <h1>Welcome to my masterpiece!</h1>
       <p>Beautiful space to share my story, my business, and my passions.</p>
