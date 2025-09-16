@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMVH Website</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html { height: 100%; font-family: 'Brush Script MT', cursive, sans-serif; }
+
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: RGB(112,130,56);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 50px; z-index: 10;
+    }
+    nav .logo { font-size: 1.8rem; font-weight: bold; color: white; font-style: italic; }
+    nav ul { list-style: none; display: flex; }
+    nav ul li { margin-left: 15px; }
+    nav ul li a {
+      text-decoration: none; color: white; padding: 10px 15px;
+      transition: background 0.3s ease;
+    }
+    nav ul li a:hover { background: rgba(255,255,255,0.2); border-radius: 5px; }
+
+    .hero {
+      position: relative; height: 100vh; display: flex;
+      flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; color: white; overflow: hidden;
+    }
+    #bg-video {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: -1;
+    }
+    .hero::before {
+      content: ""; position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; background: rgba(0,0,0,0.3);
+      z-index: 0;
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero h1 { font-size: 3rem; font-style: italic; margin-bottom: 1rem; }
+    .hero p { font-size: 1.3rem; margin-bottom: 2rem; }
+    .btn {
+      padding: 10px 20px; background: #AAC8A7; color: white;
+      border: none; cursor: pointer; border-radius: 5px;
+      text-decoration: none; font-weight: bold;
+    }
+    .btn:hover { background: #8fbf87; }
+    footer {
+      background: RGB(112,130,56); color: white; text-align: center; padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">SMVH | Webpage</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="business.html">Business</a></li>
+      <li><a href="passion.html">Passion</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <video autoplay muted loop id="bg-video">
+      <source src="https://github.com/smvhingpityourvirtualassistant/my_website/raw/refs/heads/main/Untitled%20design%20(1).mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+      <h1>Welcome to my masterpiece!</h1>
+      <p>Beautiful space to share my story, my business, and my passions.</p>
+      <a href="about.html" class="btn">DISCOVER MORE</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 SMVH Masterpiece | Built with ❤️</p>
+  </footer>
+</body>
+</html>
